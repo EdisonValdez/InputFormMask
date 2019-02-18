@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Some custom title{% endblock title %}
+
+{% block body %}
+
+    <div>
+    Hello, {{ app.request.query.get('name') | default('CodeReviewVideos') }}!
+    </div>
+
+    <div>
+    My lovely variable: {{ some_variable_name }}
+    </div>
+
+{% endblock %}
