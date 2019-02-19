@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New LaunchFolders{% endblock %}
+
+{% block body %}
+    <h1>Create new LaunchFolders</h1>
+
+    {{ include('launch_folders/_form.html.twig') }}
+
+    <a href="{{ path('launch_folders_index') }}">back to list</a>
+{% endblock %}

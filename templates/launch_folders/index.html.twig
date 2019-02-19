@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LaunchFolders index{% endblock %}
+
+{% block body %}
+    <h1>LaunchFolders index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code_name</th>
+                <th>Link</th>
+                <th>Folder_description</th>
+                <th>Business_unit</th>
+                <th>Folder_image</th>
+                <th>Product_category</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for launch_folder in launch_folders %}
+            <tr>
+                <td>{{ launch_folder.id }}</td>
+                <td>{{ launch_folder.codeName }}</td>
+                <td>{{ launch_folder.link }}</td>
+                <td>{{ launch_folder.folderDescription }}</td>
+                <td>{{ launch_folder.businessUnit }}</td>
+                <td>{{ launch_folder.folderImage }}</td>
+                <td>{{ launch_folder.productCategory }}</td>
+                <td>
+                    <a href="{{ path('launch_folders_show', {'id': launch_folder.id}) }}">show</a>
+                    <a href="{{ path('launch_folders_edit', {'id': launch_folder.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('launch_folders_new') }}">Create new</a>
+{% endblock %}

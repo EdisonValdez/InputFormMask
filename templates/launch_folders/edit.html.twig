@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit LaunchFolders{% endblock %}
+
+{% block body %}
+    <h1>Edit LaunchFolders</h1>
+
+    {{ include('launch_folders/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('launch_folders_index') }}">back to list</a>
+
+    {{ include('launch_folders/_delete_form.html.twig') }}
+{% endblock %}

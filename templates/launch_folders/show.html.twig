@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LaunchFolders{% endblock %}
+
+{% block body %}
+    <h1>LaunchFolders</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ launch_folder.id }}</td>
+            </tr>
+            <tr>
+                <th>Code_name</th>
+                <td>{{ launch_folder.codeName }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ launch_folder.link }}</td>
+            </tr>
+            <tr>
+                <th>Folder_description</th>
+                <td>{{ launch_folder.folderDescription }}</td>
+            </tr>
+            <tr>
+                <th>Business_unit</th>
+                <td>{{ launch_folder.businessUnit }}</td>
+            </tr>
+            <tr>
+                <th>Folder_image</th>
+                <td>{{ launch_folder.folderImage }}</td>
+            </tr>
+            <tr>
+                <th>Product_category</th>
+                <td>{{ launch_folder.productCategory }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('launch_folders_index') }}">back to list</a>
+
+    <a href="{{ path('launch_folders_edit', {'id': launch_folder.id}) }}">edit</a>
+
+    {{ include('launch_folders/_delete_form.html.twig') }}
+{% endblock %}
