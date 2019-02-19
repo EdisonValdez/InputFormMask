@@ -41,6 +41,11 @@ class LaunchFolders
      */
     private $folder_image;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $product_category;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +107,18 @@ class LaunchFolders
     public function setFolderImage(?string $folder_image): self
     {
         $this->folder_image = $folder_image;
+
+        return $this;
+    }
+
+    public function getProductCategory(): ?string
+    {
+        return $this->product_category;
+    }
+
+    public function setProductCategory(string $product_category): self
+    {
+        $this->product_category = $product_category;
 
         return $this;
     }
